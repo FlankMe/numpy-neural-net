@@ -3,8 +3,9 @@
 Its purpose is twofold: i) to have a tool that runs without the need to install extra packages (which in some network may be restricted by the administrator) and ii) to familiarise myself with the mechanics of implementing and training neural networks.    
 
 It includes elements such as:
-- **layers**: fully-connected, convolutional, dropout;
+- **layers**: fully-connected, convolutional;
 - **optimisers**: SGD, Adam; 
+- **regularization**: L2, dropout;
 - **activation functions**: relu, leaky relu, tanh, sigmoid, softmax;
 - **cost functions**: mean squared errors, cross-entropy.
 
