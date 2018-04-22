@@ -1,5 +1,5 @@
 """
-Main loop for testing the NumpyNet
+Testing script for NumpyNet
 """
 
 import numpy as np
@@ -17,7 +17,7 @@ import pandas as pd
 
 
 # Load data. You can change the condition to False when running it the 2nd time
-if False:
+if True:
   data = pd.DataFrame.from_csv('MNISTtrain.csv')
   portion = 0.80
   trainingSet = int(portion * len(data))
