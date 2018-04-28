@@ -1,14 +1,17 @@
 # Rudimentary library for neural networks, implemented in Numpy
 
-Its purpose is twofold: i) to have a tool that runs without the need to install extra packages (which in some network may be restricted by the administrator) and ii) to familiarise myself with the mechanics of implementing and training neural networks.    
+The generic neural network is implemented in class format, so it can be easily plugged into any project. 
+
+The purpose of the library is twofold: i) to have a tool that runs without the need to install extra packages (which in some network may be restricted by the administrator) and ii) to familiarise myself with the mechanics of implementing and training neural networks.    
 
 It includes elements such as:
 - **layers**: fully-connected, convolutional;
 - **optimisers**: SGD, Adam; 
 - **regularization**: L2, dropout;
 - **activation functions**: relu, leaky relu, tanh, sigmoid, softmax;
-- **cost functions**: mean squared errors, cross-entropy.
+- **cost functions**: mean squared errors, cross-entropy.    
 
+Feedback is welcome.  
 [@flankme](https://github.com/flankme)
 
 ## Quick start
