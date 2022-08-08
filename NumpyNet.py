@@ -106,8 +106,8 @@ class NumpyNet:
         optim.optimisationStep(self, perturbation, method, 
                                LEARNINGRATE, L2PENALTY, DROPOUT)
         
-        if VERBOSE:
-          print "Epoch:", epoch + 1, "; Loss for minibatch:", loss
+      if VERBOSE:
+        print ("Epoch:", epoch + 1, "; Loss for minibatch:", loss)
 
 
   def score(self, X, y):
