@@ -26,7 +26,7 @@ class FullyConnected():
     batchShape = parameters['batchShape']
     
     if not np.isscalar(batchShape):
-      batchShape = np.prod(batchShape)
+      batchShape = int(np.prod(batchShape))
     self.batchShape = batchShape
     self.nextBatchShape = numNeurons
     
@@ -94,7 +94,10 @@ class Convolutional():
       self.cachedInput = [[inputData, InputData_in_column]]
 
     dotProduct = np.dot(Weights_in_column, InputData_in_column) + self.bias
-    dotProduct = dotProduct.reshape(nFilters, Hnext, Wnext, minibatchSize)
+    dotProduct = dotProduct.reshape(int(nFilters), 
+                                    int(Hnext), 
+                                    int(Wnext), 
+                                    int(minibatchSize))
     dotProduct = dotProduct.transpose(3, 0, 1, 2)
 
     return (dotProduct)
@@ -102,7 +105,10 @@ class Convolutional():
   def back(self, perturbation, activation):
   # Re-adapted: https://wiseodd.github.io/techblog/2016/07/16/convnet-conv-layer/  
     Cnext, Hnext, Wnext = self.nextBatchShape
-    perturbation = perturbation.reshape((-1, Cnext, Hnext, Wnext))    
+    perturbation = perturbation.reshape((-1, 
+                                           int(Cnext), 
+                                           int(Hnext), 
+                                           int(Wnext)))      
     activation = activation.reshape(perturbation.shape)   
     
     padding, stride = self.config
@@ -169,7 +175,10 @@ class Dropout():
     # Reshape the perturbation if the preceeding layer is a conv layer
     if not np.isscalar(self.nextBatchShape):
       Cnext, Hnext, Wnext = self.nextBatchShape
-      perturbation = perturbation.reshape((-1, Cnext, Hnext, Wnext))    
+      perturbation = perturbation.reshape((-1, 
+                                           int(Cnext), 
+                                           int(Hnext), 
+                                           int(Wnext)))   
       activation = activation.reshape(perturbation.shape)   
 
     perturbation = np.multiply(perturbation, 
